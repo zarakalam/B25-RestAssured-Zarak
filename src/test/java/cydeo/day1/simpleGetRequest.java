@@ -1,7 +1,8 @@
-package day1;
+package cydeo.day1;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
@@ -11,7 +12,7 @@ public class simpleGetRequest<url> {
     String url = "http://44.201.121.105:8000/api/spartans";
 
     @Test
-    public void test1(){
+    public void test1() {
 
         Response response = RestAssured.get(url);
 
@@ -19,12 +20,10 @@ public class simpleGetRequest<url> {
 
         response.prettyPrint();
 
+        Assertions.assertEquals(200, response.statusCode());
+
 
     }
+}
 
 //complete
-
-
-
-
-}
